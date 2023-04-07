@@ -20,9 +20,10 @@ public class ExaminerServiceImpl implements ExaminerService {
             throw new NumberOfQuestionsException(amount);
         }
         Set<Question> result = new HashSet<>();
-        for (int i = 0; i <= amount; i++) {
+        while(result.size() < amount ){
             result.add(questionService.getRandom());
         }
+
         return result;
     }
 }
